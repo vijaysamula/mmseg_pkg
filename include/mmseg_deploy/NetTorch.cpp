@@ -164,25 +164,31 @@ namespace mmseg {
     auto begin = std::chrono::high_resolution_clock::now();
     torch::Tensor out_tensor = _model.forward({input_tensor}).toTensor();
     auto end = std::chrono::high_resolution_clock::now();
+    torch::Tensor argmax_tensor = out_tensor.argmax(1, false);
     if (_verbose) {
     std::cout << "Time to infer: "
               << std::chrono::duration_cast<std::chrono::nanoseconds>(end -
                                                                       begin)
                          .count() /
                      1000000.0
-              << "ms" << std::endl; }
+              << "ms" << std::endl; 
+    std::cout<<"the argmax shape is :"<<argmax_tensor.sizes()<<"\n";
+              }
 
-    torch::Tensor softmax_tensor = out_tensor.softmax(1);
-    torch::Tensor softmax_person_tensor;
-    mappingLabel();
-    for (int i = 0;i<_labels_map.size();i++) {
-      if(_labels_map[i]=="person")
-        softmax_person_tensor = softmax_tensor[0][i].mul(256);
+   
+
+    
+
+    // torch::Tensor softmax_person_tensor;
+    // mappingLabel();
+    // for (int i = 0;i<_labels_map.size();i++) {
+    //   if(_labels_map[i]=="person")
+    //     softmax_person_tensor = argmax_tensor[0][i];
       
-    }
+    // }
     
     
-    cv::Mat out_img = Tensor2Mat(softmax_person_tensor);
+    cv::Mat out_img = Tensor2Mat(argmax_tensor);
     
     
     out_img = postprocess(img,out_img);

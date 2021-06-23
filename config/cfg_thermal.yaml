@@ -12,7 +12,7 @@ dataset:
   img_prop:
     width: 160
     height: 120
-    depth: 3
+    depth: 1
   labels:
     0: 'background'
     1: 'person'
