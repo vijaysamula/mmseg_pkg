@@ -1,0 +1,11 @@
+# Openmmlab/mmsegmentation segmentation
+
+#goal definition
+sensor_msgs/Image image
+
+---
+#result definition
+sensor_msgs/Image image
+
+---
+#feedback

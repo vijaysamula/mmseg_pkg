@@ -1,0 +1,26 @@
+dataset:
+  name: "persons"
+  
+  img_means: #rgb
+    - 0.2868
+    - 0.3251
+    - 0.2838
+  img_stds: #rgb
+    - 0.1869
+    - 0.1901
+    - 0.1872
+  img_prop:
+    width: 160
+    height: 120
+    depth: 3
+  labels:
+    0: 'background'
+    1: 'person'
+    
+    
+    
+  color_map: # bgr
+    0: [0,0,0]
+    1: [255,255,255]
+    
+    
