@@ -5,12 +5,13 @@
 #include <image_transport/image_transport.h>
 #include <ros/ros.h>
 #include <mmseg_deploy/NetTorch.hpp>
-
+#include <c10/cuda/CUDACachingAllocator.h>
 #include <opencv2/imgcodecs.hpp> 
 
 #include <actionlib/server/simple_action_server.h>
 #include "mmseg_deploy/mmSegmentationAction.h"
 #include "mmseg_deploy/mmSegmentation.h"
+namespace mmseg{
 class MmsegHandler {
     public:
         /*!
@@ -67,6 +68,7 @@ class MmsegHandler {
         //! Using.
         using mmSegmentationActionServer = actionlib::SimpleActionServer<mmseg_deploy::mmSegmentationAction>;
         using mmSegmentationActionServerPtr = std::shared_ptr<mmSegmentationActionServer>;
+
         //! Segmantation action server.
         mmSegmentationActionServerPtr segmentationActionServer_;
         mmseg_deploy::mmSegmentationResult ac_result_;
@@ -88,3 +90,4 @@ class MmsegHandler {
         bool _verbose;
         std::string _cfg_path;
 };   
+}

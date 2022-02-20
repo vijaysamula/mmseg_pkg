@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+<!-- <include file="$(find mmseg_deploy)/launch/play_rosbag.launch" /> -->
+    <!-- rosbag play -->
+<include file="$(find mmseg_deploy)/launch/mmseg_start_rgb.launch" />
+<include file="$(find mmseg_deploy)/launch/mmseg_start_thermal.launch" />
+
+ <!-- <arg name="topics_name" default="/heatmapper3d_mmsegrgb/layered_heatmaps
+                                  /heatmapper3d_mmsegrgb/occupancy_cloud
+                                  /heatmapper3d_mmsegthermal/layered_heatmaps
+                                  /heatmapper3d_mmsegthermal/occupancy_cloud"/>
+<node pkg="rosbag" type="record" name="rosbag_record" output="screen"
+        args="$(arg topics_name) -O /shared/thesis/rosbags/wms_thesis_new_threed/dynamic/mmseg_dnlnet.bag"> -->
+
+</node>
+</launch>

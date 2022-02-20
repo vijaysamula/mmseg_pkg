@@ -6,7 +6,7 @@ int main(int argc, char** argv) {
   ros::NodeHandle nodeHandle("~");
 
   // init handler
-  MmsegHandler h(nodeHandle);
+  mmseg::MmsegHandler h(nodeHandle);
 
   ros::spin();
   return 0;

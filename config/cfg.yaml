@@ -1,7 +1,5 @@
 dataset:
   name: "persons"
-  location: "/cache/datasets/persons/dataset"
-  workers: 3 # number of threads to get data
   img_means: #rgb
     - 0.2868
     - 0.3251
