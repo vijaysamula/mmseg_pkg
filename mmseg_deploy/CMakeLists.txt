@@ -27,7 +27,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 
 
-set(CMAKE_PREFIX_PATH "/opt/libtorch")
+set(CMAKE_PREFIX_PATH "/opt/libtorch/libtorch")
 find_package(Torch REQUIRED )
 find_package(OpenCV REQUIRED )
 

@@ -116,10 +116,9 @@ void ModelLoader::Mat2Tensor(const cv::Mat& img, torch::Tensor& tensor_image, bo
     if (unsqueeze) {
         tensor_image.unsqueeze_(unsqueeze_dim);
     }
-
-    tensor_image[0][0] = tensor_image[0][0].div(255).sub(_img_means[0]).div(_img_stds[0]);
-    ;
     tensor_image[0][1] = tensor_image[0][1].div(255).sub(_img_means[1]).div(_img_stds[1]);
+    tensor_image[0][0] = tensor_image[0][0].div(255).sub(_img_means[0]).div(_img_stds[0]);
+
     tensor_image[0][2] = tensor_image[0][2].div(255).sub(_img_means[2]).div(_img_stds[2]);
 }
 
