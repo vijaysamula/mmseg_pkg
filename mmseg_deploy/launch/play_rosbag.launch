@@ -7,7 +7,7 @@
 
     <node pkg="rosbag" type="play" name="rosbag_play" output="log"
            args=" --clock -r 1.0 -l
-            /shared/thesis/wms/crowded_synced_extracted.bag" required="true">
+            /home/vijay/thesis/repos/empty_synced_extracted.bag" required="true">
 
     </node>
 

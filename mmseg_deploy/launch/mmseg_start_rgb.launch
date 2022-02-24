@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
-<arg name="model_path" value="/home/wms/object_segmentation/mmseg_ws/src/mmseg_deploy/checkpoints/rgb/dnl/dnl_r101-d8_512x1024_80k_cityscapes.pt"/>
-<arg name="cfg_path" value="/home/wms/object_segmentation/mmseg_ws/src/mmseg_deploy/config/cfg.yaml"/>
+<arg name="model_path" value="/home/wms//mmseg_ws/src/mmseg_deploy/checkpoints/rgb/dnl/dnl_r101-d8_512x1024_80k_cityscapes.pt"/>
+<arg name="cfg_path" value="/home/wms//mmseg_ws/src/mmseg_deploy/config/cfg.yaml"/>
 <arg name="verbose" value= "true"/>
 <arg name="input_image" value="/rgb_cam_01/image_rect_color_sync"/>
 
